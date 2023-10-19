@@ -76,7 +76,7 @@ class DevicesListFragment : Fragment(), ItemAdapter.Listener {
 
     private fun getPairedDevices(){
         try {
-            val list = ArrayList<Listitem>()//sdasdas
+            val list = ArrayList<Listitem>()
             val devicesList = bAdapter?.bondedDevices as Set<BluetoothDevice>
             devicesList.forEach {
                 list.add(
