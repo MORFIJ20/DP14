@@ -12,6 +12,11 @@
         android:theme="@style/Theme.Diplom"
         tools:targetApi="31">
         <activity
+            android:name=".StartActivity"
+            android:exported="false"
+            android:label="@string/title_activity_start"
+            android:theme="@style/Theme.Diplom.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
