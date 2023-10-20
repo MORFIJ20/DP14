@@ -29,7 +29,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.bList.setOnClickListener {
-            findNavController().navigate(R.id.action_MainFragment_to_devicesListFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_devicesListFragment)
         }
     }
 
