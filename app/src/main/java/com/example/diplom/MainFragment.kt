@@ -43,6 +43,9 @@ class MainFragment : Fragment(), BluetoothController.Listener {
         binding.bConnect.setOnClickListener {
         bluetoothController.connect(mac ?: "", this)
         }
+        binding.bSend.setOnClickListener {
+            bluetoothController.sendMessage("A")
+        }
     }
     private fun initBtAdapter(){
         val bManager = activity?.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
@@ -62,7 +65,7 @@ class MainFragment : Fragment(), BluetoothController.Listener {
 
                 }
                 else ->{
-
+                    binding.tvStatus.text = message
                 }
             }
         }
