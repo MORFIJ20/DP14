@@ -34,6 +34,7 @@ class MainFragment : Fragment(), BluetoothController.Listener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initBtAdapter()
+
         val pref = activity?.getSharedPreferences(BluetoothConstants.PREFERENCES, Context.MODE_PRIVATE)
         val mac = pref?.getString(BluetoothConstants.MAC, "")
         bluetoothController = BluetoothController(btAdapter)
@@ -45,6 +46,9 @@ class MainFragment : Fragment(), BluetoothController.Listener {
         }
         binding.bSend.setOnClickListener {
             bluetoothController.sendMessage("A")
+        }
+        binding.outSend.setOnClickListener {
+            bluetoothController.sendMessage("s${binding.etOut.text}" )
         }
     }
     private fun initBtAdapter(){
@@ -65,7 +69,9 @@ class MainFragment : Fragment(), BluetoothController.Listener {
 
                 }
                 else ->{
-                    binding.tvStatus.text = message
+                    binding.tvStatus.text = "$message C°"
+
+
                 }
             }
         }
